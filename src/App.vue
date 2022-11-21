@@ -3,10 +3,11 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
-// 引入axios
+// 引入axios，setup中缺少this
 import { getCurrentInstance } from "vue";
 const { proxy } = getCurrentInstance();
 
+// 响应式对象
 let content=ref('Vite  + Vue');
 
 async function updayeStr(){

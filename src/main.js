@@ -5,7 +5,6 @@ import { get,post } from "./utils/index.js";
 // debug
 //导入mock
 import './mock/index.js';
-
 const invitation_app = createApp(App);
 invitation_app.mount('#app');
 // 引入http
