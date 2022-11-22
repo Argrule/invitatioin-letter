@@ -39,7 +39,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  background-image: linear-gradient(to bottom left, #ffecd2, #fdc2ab);
 }
 
 h1 {
