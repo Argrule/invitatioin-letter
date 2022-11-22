@@ -5,6 +5,7 @@
 <template>
   <div class="global">
     <router-link to="/home">跳转首页页面</router-link>
+    <!-- 信封页 -->
     <div class="letter">
       <img src="../assets/letter.png" alt="letter for SIPCer" />
     </div>

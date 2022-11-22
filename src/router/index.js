@@ -18,15 +18,20 @@ const routes = [
             },
             {
                 path:'page2',
+                component: () => import('../components/page2.vue')
+            },
+            {
+                path:'page3',
                 component: () => import('../components/HelloWorld.vue')
             }
         ]
     },
+    // 收集信息页面
     {
-        path: '/about',
-        name: 'about',
-        component: () => import('../views/about.vue')
-    }
+        path: '/collect',
+        name: 'collect',
+        component: () => import('../views/collectInfo.vue')
+    }   
 ]
 const router = createRouter({
     history: createWebHistory(),
