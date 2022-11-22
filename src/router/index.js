@@ -22,7 +22,11 @@ const routes = [
             },
             {
                 path:'page3',
-                component: () => import('../components/HelloWorld.vue')
+                component: () => import('../components/page3.vue')
+            },
+            {
+                path:'page4',
+                component: () => import('../components/page4.vue')
             }
         ]
     },
