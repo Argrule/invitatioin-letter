@@ -1,17 +1,26 @@
-<script setup>
-
-</script>
-
 <template>
-  <div class="global">
-    <router-link to="/home">跳转首页页面</router-link>
+  <div class="global" @click="gotoHome">    
     <!-- 信封页 -->
     <div class="letter">
       <img src="../assets/letter.png" alt="letter for SIPCer" />
-    </div>
-    <!-- <HelloWorld :msg="content" /> -->
+    </div>    
   </div>
 </template>
+
+<script>
+  export default {
+    data(){
+      return {        
+      }
+    },
+    methods:{
+      // 跳转home页
+      gotoHome(){
+        this.$router.push('/home');
+      }
+    }
+  }  
+</script>
 
 <style>
 /* .global {
