@@ -39,23 +39,23 @@
   }
 
   35% {
-    transform: scale(1) rotate(-15deg);
+    transform: scale(1) rotate(-10deg);
   }
 
-  40% {
+  /* 40% {
     transform: scale(1) rotate(0deg);
-  }
+  } */
 
   45% {
-    transform: scale(1) rotate(15deg);
+    transform: scale(1) rotate(10deg);
   }
 
-  50% {
+  /* 50% {
     transform: scale(1) rotate(0deg);
-  }
+  } */
 
   55% {
-    transform: scale(1) rotate(-15deg);
+    transform: scale(1) rotate(-10deg);
   }
 
   60% {
