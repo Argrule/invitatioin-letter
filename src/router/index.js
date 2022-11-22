@@ -9,7 +9,18 @@ const routes = [
     {
         path: '/home',
         name: 'home',
-        component: () => import('../views/home.vue')
+        redirect:'/home/page1',
+        component: () => import('../views/home.vue'),
+        children:[
+            {
+                path:'page1',
+                component: () => import('../components/page1.vue')
+            },
+            {
+                path:'page2',
+                component: () => import('../components/HelloWorld.vue')
+            }
+        ]
     },
     {
         path: '/about',
