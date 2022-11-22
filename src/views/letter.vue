@@ -1,17 +1,26 @@
-<script setup>
-
-</script>
-
 <template>
-  <div class="global">
-    <router-link to="/home">跳转首页页面</router-link>
+  <div class="global" @click="gotoHome">    
     <!-- 信封页 -->
     <div class="letter">
       <img src="../assets/letter.png" alt="letter for SIPCer" />
-    </div>
-    <!-- <HelloWorld :msg="content" /> -->
+    </div>    
   </div>
 </template>
+
+<script>
+  export default {
+    data(){
+      return {        
+      }
+    },
+    methods:{
+      // 跳转home页
+      gotoHome(){
+        this.$router.push('/home');
+      }
+    }
+  }  
+</script>
 
 <style>
 /* .global {
@@ -39,23 +48,23 @@
   }
 
   35% {
-    transform: scale(1) rotate(-15deg);
+    transform: scale(1) rotate(-10deg);
   }
 
-  40% {
+  /* 40% {
     transform: scale(1) rotate(0deg);
-  }
+  } */
 
   45% {
-    transform: scale(1) rotate(15deg);
+    transform: scale(1) rotate(10deg);
   }
 
-  50% {
+  /* 50% {
     transform: scale(1) rotate(0deg);
-  }
+  } */
 
   55% {
-    transform: scale(1) rotate(-15deg);
+    transform: scale(1) rotate(-10deg);
   }
 
   60% {

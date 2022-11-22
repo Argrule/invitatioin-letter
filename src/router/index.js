@@ -3,6 +3,10 @@ import Letter from "@/views/letter.vue"
 const routes = [
     {
         path: '/',
+        redirect:'/letter'        
+    },
+    {
+        path: '/letter',
         name: 'letter',
         component: Letter
     },
