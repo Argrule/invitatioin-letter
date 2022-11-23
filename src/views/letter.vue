@@ -22,11 +22,12 @@
   }  
 </script>
 
-<style>
+<style scoped>
 /* .global {
   background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
 } */
 .letter {
+  /* height: ; */
   animation: lettermove 2s ease 1s 3 normal;
 }
 

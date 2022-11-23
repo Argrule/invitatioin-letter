@@ -1,0 +1,78 @@
+<template>
+<div><h1>移动端</h1></div>    
+    <div class="global" @click="gotoHome">    
+      <!-- 信封页 -->
+      <div class="letter">
+        <img src="../assets/letter.png" alt="letter for SIPCer" />
+      </div>    
+    </div>
+  </template>
+  
+  <script>
+    export default {
+      data(){
+        return {        
+        }
+      },
+      methods:{
+        // 跳转home页
+        gotoHome(){
+          this.$router.push('/home_m');
+        }
+      }
+    }  
+  </script>
+  
+  <style scoped>  
+  .letter {
+    /* height: 90vh; */
+    width: 90vw;
+    animation: lettermove 2s ease 1s 3 normal;
+  }
+  
+  @keyframes lettermove {
+    0% {
+      transform: scale(0.9) rotate(-8deg);
+    }
+  
+    10% {
+      transform: scale(0.8) rotate(-15deg);
+    }
+  
+    20% {
+      transform: scale(0.8) rotate(-15deg);
+    }
+  
+    30% {
+      transform: scale(1) rotate(0deg);
+    }
+  
+    35% {
+      transform: scale(1) rotate(-10deg);
+    }
+  
+    /* 40% {
+      transform: scale(1) rotate(0deg);
+    } */
+  
+    45% {
+      transform: scale(1) rotate(10deg);
+    }
+  
+    /* 50% {
+      transform: scale(1) rotate(0deg);
+    } */
+  
+    55% {
+      transform: scale(1) rotate(-10deg);
+    }
+  
+    60% {
+      transform: scale(1) rotate(0deg);
+    }
+  
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }  
+  </style>

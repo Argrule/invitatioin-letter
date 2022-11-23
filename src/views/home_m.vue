@@ -1,4 +1,5 @@
 <template>
+    <div><h1>移动端</h1></div>
     <!-- 信的内容，容器 -->
     <div class="letter_content">
         <div class="center">
@@ -22,7 +23,7 @@ export default {
         goPageLast() {
             this.num--;
             if (this.num==0) {
-                this.$router.push('/letter');
+                this.$router.push('/letter_m');
             } else {
                 this.$router.push("page" + this.num);   
             }            
