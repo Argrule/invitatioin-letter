@@ -4,7 +4,6 @@
       <div style="color: red">Hello,page1</div>
       <div style="color: green" @click="goPage">go page2</div>
       <router-link to="page2">go to page2</router-link>
-      <!-- <img src="../assets/page1.png" alt="letter for SIPCer" /> -->
     </div>
   </div>
 </template>
