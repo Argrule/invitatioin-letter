@@ -25,10 +25,16 @@ export default {
 
 <style scoped>
 .center {
-  /* background: url("../assets/page1.png"); */
-  background-color: pink;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.incenter {
+  background: url("../assets/page1.png");
   background-size: 100% 100%;
-  height: 80%;
-  width: 80%;
+  height: 70%;
+  width: 75%;
 }
 </style>
