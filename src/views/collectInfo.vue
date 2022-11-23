@@ -17,19 +17,20 @@
         <!-- 收集信息页面 -->
         <div v-else class="col_form">
             <div class="form_list">
-                <div style="color: black;font-size: larger;" @click="putQuery">信息收集</div>
+                <div class="word">信息收集</div>
                 <input type="text" placeholder="姓名" v-model="query.name">
                 <input type="text" placeholder="年龄" v-model="query.age">
-                <input type="text" placeholder="电话" v-model="query.phone">
-                <!-- <input type="text" placeholder="礼物选取" v-model="query.gift"> -->
+                <input type="text" placeholder="电话" v-model="query.phone">                
                 <select v-model="query.gift">
+                    <!-- placeholder效果 -->
                     <option value='' disabled selected style="display:none;">礼物选取</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
+                    <!-- gift list -->
+                    <template v-for="(item,i) in this.giftList" :key="i">
+                        <option :value="item">{{ item }}</option>                    
+                    </template>
                 </select>
                 <input type="text" placeholder="收货地址" v-model="query.adress">
+                <button class="btn_col" @click="putQuery">提交</button>
             </div>
         </div>
     </div>
@@ -46,7 +47,8 @@ export default {
                 phone: '',
                 gift: '',
                 adress: ''
-            }
+            },
+            giftList:['Volvo','Saab','Opel','Audi']
         }
     },
     methods: {
@@ -77,7 +79,12 @@ export default {
     font-size: larger;
     color: black;
 }
-
+.word{
+    color: black;
+    font-weight: 500;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+}
 .picture {
     animation: pic_ani 2s ease 0.1s 1 normal;
 }
@@ -97,7 +104,7 @@ export default {
     top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     width: 380px;
 }
 
@@ -124,16 +131,20 @@ option:hover {
     background-color: red;
     /* background-color: #1E90FF; */
 }
-
+.btn_col{
+    font-size: larger;
+    margin: 10px auto;    
+    width: 250px;
+}
 input,
 select {
     opacity: 1;
     background-color: azure;
     color: black;
     font-size: larger;
-    margin: 20px;
+    margin: 10px;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 10px;    
 }
 
 @keyframes pic_ani {
