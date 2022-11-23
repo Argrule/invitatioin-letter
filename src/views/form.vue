@@ -1,6 +1,6 @@
 <template>
     <div class="form_list">
-        <div class="word">信息收集</div>
+        <div class="word">若您有时间参加本次生日活动，请填写以下信息，并加入微信群qwq</div>
         <input type="text" placeholder="姓名" v-model="query.name">
         <input type="text" placeholder="邮箱" v-model="query.email">
         <input type="text" placeholder="电话" v-model="query.phone">
@@ -41,6 +41,10 @@ export default {
 
 <style scoped>
 .word{
+    display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            line-height: 110%;
     color: black;
     font-weight: 500;
     font-family:'Times New Roman', Times, serif;

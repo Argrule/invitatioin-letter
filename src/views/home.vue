@@ -54,6 +54,7 @@ export default {
     width: 40px;
     background: url("../assets/left.png");
     background-size: 100% 100%;
+    animation: showHide 1s ease 0.1s infinite normal;
 }
 
 .arrow_r {
@@ -61,8 +62,17 @@ export default {
     width: 40px;
     background: url("../assets/right.png");
     background-size: 100% 100%;
+    animation: showHide 1s ease 0.1s infinite normal;
 }
 
+@keyframes showHide {
+    50% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .letter_content {
     /* min-width: ; */
     width: 65vw;

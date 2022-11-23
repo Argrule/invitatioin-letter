@@ -28,7 +28,7 @@
 } */
 .letter {
   /* height: ; */
-  animation: lettermove 2s ease 1s 3 normal;
+  animation: lettermove 2s ease 0.4s 3 normal;
 }
 
 @keyframes lettermove {
