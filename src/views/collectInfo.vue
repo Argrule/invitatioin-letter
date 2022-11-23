@@ -15,11 +15,12 @@
         <!-- 收集信息页面 -->
         <div v-else class="col_form">
             <div class="form_list">
-                <input type="text" placeholder="姓名">
-                <input type="text" placeholder="年龄">                
-                <input type="text" placeholder="电话">                
-                <input type="text" placeholder="礼物选取">                
-                <input type="text" placeholder="收货地址">              
+                <div style="color: black;font-size: larger;" @click="putQuery">信息收集</div>
+                <input type="text" placeholder="姓名" v-model="query.name">
+                <input type="text" placeholder="年龄" v-model="query.age">      
+                <input type="text" placeholder="电话" v-model="query.phone">   
+                <input type="text" placeholder="礼物选取" v-model="query.gift">
+                <input type="text" placeholder="收货地址" v-model="query.adress">
             </div>
         </div>
     </div>
@@ -30,6 +31,13 @@ export default {
     data() {
         return {
             showActive: 1,
+            query:{
+                name:'',
+                age:'',
+                phone:'',
+                gift:'',
+                adress:''
+            }
         }
     },
     methods: {
@@ -37,6 +45,9 @@ export default {
             // 必要时加setTimeOut
             this.showActive = 0;
             console.log('showForm');
+        },
+        putQuery(){
+            console.log(this.query);
         }
     }
 }
