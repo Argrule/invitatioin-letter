@@ -33,8 +33,7 @@ export default {
     return {}
   },
   created() {
-    console.log('888888888888888', this);
-    console.log();
+    console.log('检查是否为电脑端');
     if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)!=null){
       this.$router.push("/letter_m");
     }else{
