@@ -55,78 +55,78 @@ export default {
 
 <style scoped>
 .title {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%);
-    font-size: larger;
-    color: black;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: larger;
+  color: black;
 }
 
 .picture {
-    animation: pic_ani 2s ease 0.1s 1 normal;
+  animation: pic_ani 2s ease 0.1s 1 normal;
 }
 
 .col_form {
-    /* 不透明度 */
-    opacity: 0.5;
-    background: url("../assets/collect.png");
-    background-size: 100% 100%;
-    height: 530px;
-    width: 800px;
+  /* 不透明度 */
+  opacity: 0.6;
+  background: url("../assets/collect.png");
+  background-size: 100% 100%;
+  height: 530px;
+  width: 800px;
 }
 .form_list {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    flex-direction: column;
-    width: 380px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 380px;
 }
-input{
-    background-color: azure;
-    color: black;
-    font-size: larger;
-    margin: 20px;
-    padding: 15px;
-    border-radius: 10px;
-
+input {
+  opacity: 1;
+  background-color: azure;
+  color: black;
+  font-size: larger;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 @keyframes pic_ani {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    40% {
-        transform: scale(1.1);
-    }
+  40% {
+    transform: scale(1.1);
+  }
 
-    80% {
-        transform: scale(1);
-    }
+  80% {
+    transform: scale(1);
+  }
 }
 
 .arrow_l {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translate(0, -50%);
-    height: 40px;
-    width: 40px;
-    background: url("../assets/left.png");
-    background-size: 100% 100%;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  height: 40px;
+  width: 40px;
+  background: url("../assets/left.png");
+  background-size: 100% 100%;
 }
 
 .arrow_r {
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    transform: translate(0, -50%);
-    height: 40px;
-    width: 40px;
-    background: url("../assets/right.png");
-    background-size: 100% 100%;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translate(0, -50%);
+  height: 40px;
+  width: 40px;
+  background: url("../assets/right.png");
+  background-size: 100% 100%;
 }
 </style>
