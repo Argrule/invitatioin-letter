@@ -19,9 +19,16 @@
             <div class="form_list">
                 <div style="color: black;font-size: larger;" @click="putQuery">信息收集</div>
                 <input type="text" placeholder="姓名" v-model="query.name">
-                <input type="text" placeholder="年龄" v-model="query.age">      
-                <input type="text" placeholder="电话" v-model="query.phone">   
-                <input type="text" placeholder="礼物选取" v-model="query.gift">
+                <input type="text" placeholder="年龄" v-model="query.age">
+                <input type="text" placeholder="电话" v-model="query.phone">
+                <!-- <input type="text" placeholder="礼物选取" v-model="query.gift"> -->
+                <select v-model="query.gift">
+                    <option value='' disabled selected style="display:none;">礼物选取</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
                 <input type="text" placeholder="收货地址" v-model="query.adress">
             </div>
         </div>
@@ -33,12 +40,12 @@ export default {
     data() {
         return {
             showActive: 1,
-            query:{
-                name:'',
-                age:'',
-                phone:'',
-                gift:'',
-                adress:''
+            query: {
+                name: '',
+                age: '',
+                phone: '',
+                gift: '',
+                adress: ''
             }
         }
     },
@@ -48,13 +55,13 @@ export default {
             this.showActive = 0;
             console.log('showForm');
         },
-        putQuery(){
+        putQuery() {
             console.log(this.query);
         },
-        goPageLast(){
+        goPageLast() {
             this.$router.push('/home');
         },
-        goPageNext(){
+        goPageNext() {
             this.showActive = 0;
         }
     }
@@ -63,78 +70,105 @@ export default {
 
 <style scoped>
 .title {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%);
-  font-size: larger;
-  color: black;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: larger;
+    color: black;
 }
 
 .picture {
-  animation: pic_ani 2s ease 0.1s 1 normal;
+    animation: pic_ani 2s ease 0.1s 1 normal;
 }
 
 .col_form {
-  /* 不透明度 */
-  opacity: 0.6;
-  background: url("../assets/collect.png");
-  background-size: 100% 100%;
-  height: 530px;
-  width: 800px;
+    /* 不透明度 */
+    opacity: 0.6;
+    background: url("../assets/collect.png");
+    background-size: 100% 100%;
+    height: 530px;
+    width: 800px;
 }
+
 .form_list {
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  width: 380px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 380px;
 }
-input {
-  opacity: 1;
-  background-color: azure;
-  color: black;
-  font-size: larger;
-  margin: 20px;
-  padding: 15px;
-  border-radius: 10px;
+
+/* /修改option/  */
+option::-ms-expand {
+    display: none;
+}
+
+option {
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari 和 Chrome */
+    appearance: none;
+    border-radius: 15px;
+    font-size: larger;
+    /* color: ; */
+    background-color: #ffffde;
+}
+
+/* --背景色字体颜色-- */
+option:hover {
+    color: #fff;
+    background-color: red;
+    /* background-color: #1E90FF; */
+}
+
+input,
+select {
+    opacity: 1;
+    background-color: azure;
+    color: black;
+    font-size: larger;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 @keyframes pic_ani {
-  0% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(1);
+    }
 
-  40% {
-    transform: scale(1.1);
-  }
+    40% {
+        transform: scale(1.1);
+    }
 
-  80% {
-    transform: scale(1);
-  }
+    80% {
+        transform: scale(1);
+    }
 }
 
 .arrow_l {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translate(0, -50%);
-  height: 40px;
-  width: 40px;
-  background: url("../assets/left.png");
-  background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0, -50%);
+    height: 40px;
+    width: 40px;
+    background: url("../assets/left.png");
+    background-size: 100% 100%;
 }
 
 .arrow_r {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translate(0, -50%);
-  height: 40px;
-  width: 40px;
-  background: url("../assets/right.png");
-  background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(0, -50%);
+    height: 40px;
+    width: 40px;
+    background: url("../assets/right.png");
+    background-size: 100% 100%;
 }
 </style>
