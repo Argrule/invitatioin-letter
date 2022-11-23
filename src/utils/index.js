@@ -2,7 +2,8 @@ import axios from 'axios'
 
 // debug
 // let baseURL = 'http://localhost:5173'
-let baseURL = 'https://api.va1entine.com'
+// let baseURL = 'https://api.va1entine.com'
+let baseURL = 'http://43.142.146.75:38089/'
 
 const $http = axios.create({
   baseURL,
