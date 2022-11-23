@@ -31,7 +31,7 @@ export default {
         goPageNext() {
             this.num++;
             if(this.num>4) 
-            this.$router.push("/home");
+            this.$router.push("/collect");
             else
             this.$router.push("page" + this.num);
             // this.$router.go(-1);
