@@ -25,7 +25,7 @@
   width: 35%;
   background-color: rgba(252, 189, 107, 0.9);
   border-radius: 10px;
-  margin-left: 3%;
+  margin: 5%;
   padding: 20px;
   display: flex;
   flex-direction: column;
