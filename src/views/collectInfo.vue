@@ -2,10 +2,12 @@
     <div class="title">
         <h2> Happy 12th Anniversary </h2>
     </div>
-    <!-- 左箭头 -->
-    <div class="arrow_l" @click="goPageLast"></div>
-    <!-- 右箭头 -->
-    <div class="arrow_r" @click="goPageNext"></div>
+    <div v-show="this.showActive">
+        <!-- 左箭头 -->
+        <div class="arrow_l" @click="goPageLast"></div>
+        <!-- 右箭头 -->
+        <div class="arrow_r" @click="goPageNext"></div>
+    </div>
     <div class="picture">
         <!-- 图片 -->
         <div v-if="this.showActive">
@@ -48,6 +50,12 @@ export default {
         },
         putQuery(){
             console.log(this.query);
+        },
+        goPageLast(){
+            this.$router.push('/home');
+        },
+        goPageNext(){
+            this.showActive = 0;
         }
     }
 }
