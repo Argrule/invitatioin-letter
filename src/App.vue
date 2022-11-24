@@ -34,11 +34,12 @@ export default {
   },
   created() {
     console.log('检查是否为电脑端');
-    if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)!=null){
-      this.$router.push("/letter_m");
-    }else{
-      this.$router.push("/letter");
-    }    
+    // if(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)!=null){
+    //   this.$router.push("/letter_m");
+    // }else{
+    //   this.$router.push("/letter");
+    // }
+    this.$router.push("/letter");
   }
 }
 </script>

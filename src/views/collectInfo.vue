@@ -1,7 +1,7 @@
 <template>
-    <div class="title">
+    <!-- <div class="title">
         <h2> Happy 12th Anniversary </h2>
-    </div>
+    </div> -->
     <div v-show="this.showActive">
         <!-- 左箭头 -->
         <div class="arrow_l" @click="goPageLast"></div>
@@ -10,29 +10,33 @@
     </div>
     <div class="picture">
         <!-- 图片 -->
-        <div v-if="this.showActive">
+        <div>
             <img @click="showForm" src="../assets/collect.png" style="width: 100%;"
                 alt="letter-background for SIPCer" />
         </div>
+        <!-- <div v-if="this.showActive">
+            <img @click="showForm" src="../assets/collect.png" style="width: 100%;"
+                alt="letter-background for SIPCer" />
+        </div> -->
         <!-- 收集信息页面 -->
-        <div v-else class="col_form">
-            <div class="form_list">
-                <div class="word">信息收集</div>
+        <!-- <div v-else class="col_form">
+            <div class="form_list"> -->
+                <!-- <div class="word">信息收集</div>
                 <input type="text" placeholder="姓名" v-model="query.name">
                 <input type="text" placeholder="年龄" v-model="query.age">
                 <input type="text" placeholder="电话" v-model="query.phone">                
-                <select v-model="query.gift">
+                <select v-model="query.gift"> -->
                     <!-- placeholder效果 -->
-                    <option value='' disabled selected style="display:none;">礼物选取</option>
+                    <!-- <option value='' disabled selected style="display:none;">礼物选取</option> -->
                     <!-- gift list -->
-                    <template v-for="(item,i) in this.giftList" :key="i">
+                    <!-- <template v-for="(item,i) in this.giftList" :key="i">
                         <option :value="item">{{ item }}</option>                    
                     </template>
-                </select>
-                <input type="text" placeholder="收货地址" v-model="query.adress">
+                </select> -->
+                <!-- <input type="text" placeholder="收货地址" v-model="query.adress">
                 <button class="btn_col" @click="putQuery">提交</button>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
     </div>
 </template>
 
@@ -55,6 +59,7 @@ export default {
         showForm() {
             // 必要时加setTimeOut
             this.showActive = 0;
+            this.$router.push('/form');
             console.log('showForm');
         },
         putQuery() {
@@ -66,6 +71,7 @@ export default {
         },
         goPageNext() {
             this.showActive = 0;
+            this.$router.push('/form');
         }
     }
 }

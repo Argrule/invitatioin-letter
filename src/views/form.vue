@@ -34,6 +34,7 @@ export default {
     },
     methods: {
         async putQuery() {
+            if (this.checkQuery()) return;
             console.log('query', this.query);
             const { data: res } = await post('/invitation/submit', this.query);
             console.log('res', res);
@@ -46,18 +47,20 @@ export default {
         // 校验
         checkQuery() {
             if (this.query.name === '') {
-                this.$message({
-                    showClose: true,
-                    message: '请输入账号',
-                    type: 'error'
-                })
+                alert('请输入姓名')
+                // this.$message({
+                //     showClose: true,
+                //     message: '请输入账号',
+                //     type: 'error'
+                // })
+            } else if (this.query.phone === '') {
+                alert('请输入手机号');
             } else if (this.query.mailbox === '') {
-                this.$message({
-                    showClose: true,
-                    message: '请输入密码',
-                    type: 'error'
-                })
+                alert('请输入邮箱');
+            } else {
+                return false;
             }
+            return true;
         }
     }
 }
