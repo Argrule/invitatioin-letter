@@ -46,9 +46,9 @@ export default {
               this.query.giftId = 1;
             }
             const { data: res } = await post('/invitation/submit', this.query);
-            console.log('res', res);
+            // console.log('res', res);
             if (res.code == '00000') {                
-                ElMessage.success('提交成功');
+                ElMessage.success(res.message);
                 this.$router.replace('/letter');
             } else {
                 ElMessage.error(res.message);             
