@@ -9,5 +9,12 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      (function(){
+        if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)!=null) {
+          window.location.replace('https://cn.bing.com/search?q=%E5%A6%82%E4%BD%95%E8%AE%A9css%E6%A0%B7%E5%BC%8F%E9%80%82%E9%85%8D%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5&PC=U316&FORM=CHROMN')
+        }
+      })()
+    </script>
   </body>
 </html>

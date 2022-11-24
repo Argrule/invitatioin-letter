@@ -2,7 +2,7 @@
   <div class="global" @click="gotoHome">    
     <!-- 信封页 -->
     <div class="letter">
-      <img src="../assets/letter.png" alt="letter for SIPCer" />
+      <img src="../assets/letter.png" :class="[userAgent()? 'letter_m':'']" alt="letter for SIPCer" />
     </div>    
   </div>
 </template>
@@ -14,6 +14,10 @@
       }
     },
     methods:{
+      // 是手机端
+      userAgent(){
+        return navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)!=null
+      },
       // 跳转home页
       gotoHome(){
         this.$router.push('/home');
@@ -29,6 +33,9 @@
 .letter {
   /* height: ; */
   animation: lettermove 2s ease 0.4s 3 normal;
+}
+.letter_m {
+  width: 100%;
 }
 
 @keyframes lettermove {
