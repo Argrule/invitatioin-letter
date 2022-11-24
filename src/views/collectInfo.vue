@@ -60,7 +60,7 @@ export default {
             // 必要时加setTimeOut
             this.showActive = 0;
             this.$router.push('/form');
-            console.log('showForm');
+            // console.log('showForm');
         },
         putQuery() {
             console.log(this.query);
