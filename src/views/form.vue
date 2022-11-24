@@ -49,6 +49,7 @@ export default {
             console.log('res', res);
             if (res.code == '00000') {                
                 ElMessage.success('提交成功');
+                this.$router.replace('/letter');
             } else {
                 ElMessage.error(res.message);             
             }
