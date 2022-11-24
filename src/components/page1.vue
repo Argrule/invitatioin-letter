@@ -1,6 +1,6 @@
 <template>
   <div class="incenter">
-    <div v-show="showActive" class="text1">
+    <div :class="[showActive?'text1':'text1 hidden']">
       <p>有时你是否会想起</p>
       <p>自己在一间小小的工作室</p>
       <p>和一群志同道合的伙伴</p>
@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style scoped>
+.hidden{  
+  opacity: 0;
+}
 .incenter {
   background: url("../assets/page1.png");
   background-size: 100% 100%;
@@ -41,6 +44,8 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  transition: all 1s ease-in-out;
+  /* animation: opacity 1s; */
 }
 p {
   font-size: large;
