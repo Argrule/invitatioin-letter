@@ -3,12 +3,12 @@
         <div class="form_list">
             <p class="title1">&nbsp;&nbsp;亲爱的学长学姐:</p>
             <div class="inner">
-                <div class="word">若您有时间参加本次生日活动，请填写以下信息，并加入微信群qwq</div>
+                <div class="word">本次中心生日因校内疫情原因将生日日期提前至2022年11月26日。若您有时间参加本次生日活动，请您填写以下信息，并扫描下方二维码加入微信群。</div>
                 <div class="title">基本信息</div>
                 <input type="text" placeholder="姓名" v-model="query.name">
                 <input type="text" placeholder="邮箱" v-model="query.mailbox">
                 <input type="text" placeholder="电话" v-model="query.phone">
-                <p class="word">我们为您准备了小礼物，若您喜欢，请填写邮寄地址</p>
+                <p class="word">我们为您准备了小礼物，若您喜欢，请填写您的收件地址，以便我们邮寄</p>
                 <input type="text" placeholder="地址" v-model="query.address">
                 <button class="btn_col" @click="putQuery">提交</button>
                 <img src="../assets/wx_code.png" style="width:65%;margin: 15px auto; " alt="微信群二维码">
