@@ -1,5 +1,7 @@
 <template>
-  <div class="global" @click="gotoHome">    
+  <!-- <audio ref="audio" src="../assets/bgm.mp3" loop preload="auto"></audio> -->
+  <!-- <video id="video" src="../assets/bgm.mp3" controls="controls" hidden="hidden" autoplay="autoplay"  loop="loop"> </video> -->
+  <div class="global" @click="gotoHome">
     <!-- 信封页 -->
     <div class="letter">
       <img src="../assets/letter.png" :class="[userAgent()? 'letter_m':'']" alt="letter for SIPCer" />

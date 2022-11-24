@@ -1,6 +1,6 @@
 <template>
   <div class="incenter">
-    <div class="text1">
+    <div v-show="showActive" class="text1">
       <p>一起安静的自习</p>
       <p>一起团建</p>
       <p>时光荏苒</p>
@@ -10,7 +10,17 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import { mapState,mapMutations } from "vuex";
+export default {
+  computed:{
+    ...mapState('m_user',['showActive'])
+  },
+  methods:{
+    ...mapMutations('m_user',['changeShow'])
+  }
+}
+</script>
 
 <style scoped>
 .incenter {

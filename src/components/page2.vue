@@ -1,6 +1,6 @@
 <template>
   <div class="incenter">
-    <div class="text1">
+    <div v-show="showActive" class="text1">
       <p>参与项目开发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打了许多比赛</p>
       <p>自己在一间小小的工作室</p>
       <p>和一群志同道合的伙伴</p>
@@ -9,11 +9,14 @@
 </template>
 
 <script>
+import { mapState,mapMutations } from "vuex";
 export default {
-  data() {
-    return {};
+  computed:{
+    ...mapState('m_user',['showActive'])
   },
-  methods: {},
+  methods:{
+    ...mapMutations('m_user',['changeShow'])
+  }
 };
 </script>
 

@@ -12,35 +12,44 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 export default {
     data() {
         return {
-            num:1,
+            num: 1,
         };
-    },    
-    methods: {
-        computed:{
-            // 是手机端
-            isMobile(){
-                return navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)!=null
-            },
+    },
+    computed: {
+        ...mapState('m_user', ['showActive']),
+        // 是手机端
+        isMobile() {
+            return navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i) != null
         },
+    },
+    methods: {
+        ...mapMutations('m_user', ['changeShow']),
         goPageLast() {
             this.num--;
-            if (this.num==0) {
+            if (this.num == 0) {
                 this.$router.push('/letter');
             } else {
-                this.$router.push("page" + this.num);   
-            }            
+                this.$router.push("page" + this.num);
+            }
             // this.$router.go(-1);
         },
         goPageNext() {
+            if (this.showActive == false && this.num <= 3) {
+                return this.changeShow();
+            }
             this.num++;
-            if(this.num>4) 
-            this.$router.push("/collect");
-            else
-            this.$router.push("page" + this.num);
-            // this.$router.go(-1);
+            if (this.num > 4) {
+                // this.changeShow();
+                this.$router.push("/collect");
+            }
+            else {
+                this.changeShow();
+                this.$router.push("page" + this.num);
+            }
         },
     },
 };
@@ -75,10 +84,12 @@ export default {
     50% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
+
 .letter_content {
     /* min-width: ; */
     width: 65vw;
