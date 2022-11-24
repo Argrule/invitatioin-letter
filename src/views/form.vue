@@ -18,7 +18,9 @@
 </template>
 
 <script>
-import { post } from '../utils/index.js'
+import { post } from '../utils/index.js';
+import 'element-plus/es/components/message/style/css'
+import { ElMessage } from 'element-plus';
 export default {
     data() {
         return {
@@ -32,31 +34,31 @@ export default {
             giftList: ['是', '否']
         }
     },
+    components: {
+        ElMessage
+    },
     methods: {
         async putQuery() {
-            if (this.checkQuery()) return;
-            console.log('query', this.query);
+            if (this.checkQuery()) return;            
+            if (this.query.address==='') {
+              this.query.giftId = 0;
+            }
             const { data: res } = await post('/invitation/submit', this.query);
             console.log('res', res);
-            if (res.code == '00000') {
-                alert('提交成功');
+            if (res.code == '00000') {                
+                ElMessage.success('提交成功');
             } else {
-                alert(res.message);
+                ElMessage.error(res.message);             
             }
         },
         // 校验
         checkQuery() {
-            if (this.query.name === '') {
-                alert('请输入姓名')
-                // this.$message({
-                //     showClose: true,
-                //     message: '请输入账号',
-                //     type: 'error'
-                // })
-            } else if (this.query.phone === '') {
-                alert('请输入手机号');
-            } else if (this.query.mailbox === '') {
-                alert('请输入邮箱');
+            if (this.query.name === '') {                
+                ElMessage.error('请输入姓名');              
+            } else if (this.query.phone === '') {                
+                ElMessage.error('请输入手机号');
+            } else if (this.query.mailbox === '') {                
+                ElMessage.error('请输入邮箱');
             } else {
                 return false;
             }
