@@ -35,7 +35,7 @@ export default {
 .text1 {
   height: 85%;
   width: 35%;
-  background-color: rgba(221, 255, 161, 0.9);
+  background-color: rgba(252, 189, 107, 0.9);
   border-radius: 10px;
   margin: 5%;
   padding: 20px;
